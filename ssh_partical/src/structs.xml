@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+        <!-- developer model -->
+		<constant name="struts.devMode" value="true"></constant>
+		<!-- Dynamic model -->
+		<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+        <!-- directory setting -->
+		<package name="user" extends="struts-default"  namespace="/">
+			<action name="user" class="com.ssh_partical.action.UserAction">
+				<result name="error">/error.jsp</result>
+				<result name="success">/success.jsp</result>
+				<result name="update">/updateuser.jsp</result>
+			</action>
+		</package>
+
+</struts>
