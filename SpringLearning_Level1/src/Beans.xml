@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--  singleton is used for keep the class with same value unit we change it -->
+    <!--  if we didnt set scope or we keep as prototype, it will create new Object when we call-->
+    <bean id = "helloWorld" class = "com.SpringHello.HelloWorld" >
+    <!-- scope = "singleton" init-method = "init" destroy-method = "destory"> -->
+    <property name="name" value = "Joshua"/>
+    <property name="Greeting" value = "My Greetings"/>
+    <property name="cheers" value = "lets cheers"/>
+   
+    
+   <!--  <property name="hello" value = "Hello Man" /> if we use prototype scope, we cant running destory-method because it created 
+   more then one objects and it will let JVM to destroy it -->
+    
+    </bean>
+    <bean id = "startEventHandler" class = "com.SpringHello.StartEventHandler"/>
+    
+    <bean id ="stopEventHandler" class ="com.SpringHello.StopEventHandle"/>
+    <bean id = "sayGoodBye" class = "com.SpringHello.SayGoodBye" parent = "helloWorld"> <!-- scope = "singleton" -->
+    <property name="name" value = "Lisa"/>
+    <property name="Cheers" value = "Good Luck"/>
+    </bean>
+    
+    <bean class = "com.SpringHello.beforeHello"/>
+  
+    </beans>
